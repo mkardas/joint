@@ -38,6 +38,14 @@ class JointAttentionModel(FairseqModel):
         :ref: fairseq.models.joint_attention_parser
         :prog:
     """
+    @classmethod
+    def hub_models(cls):
+        # fmt: off
+        return {
+            'joint_attention.wmt16.en-de': 'https://github.com/mkardas/joint/releases/download/v0.1.1/wmt16.en-de.joined-dict.joint-attention.tar.xz',
+            'joint_attention.wmt14.en-fr': 'https://github.com/mkardas/joint/releases/download/v0.1.1/wmt14.en-fr.joined-dict.joint-attention.tar.xz',
+        }
+        # fmt: on
 
     def __init__(self, encoder, decoder):
         super().__init__(encoder, decoder)

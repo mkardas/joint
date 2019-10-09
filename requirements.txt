@@ -5,4 +5,3 @@ regex
 requests
 subword-nmt
 fairseq==0.8.0
-https://github.com/paperswithcode/sotabench-eval/archive/tok-bleu.zip

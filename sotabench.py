@@ -108,7 +108,7 @@ for model_cfg in models:
         if src_lang == model_cfg.src_lang and dst_lang == model_cfg.dst_lang:
             evaluator = model_cfg.get_evaluator(model, ds)
 
-            with tqdm(batchify(evaluator.metrics.source_segments.items(), model_cfg.batch_size)) as iter:
+            with tqdm(batchify(evaluator.source_segments.items(), model_cfg.batch_size)) as iter:
                 for batch in iter:
                     sids, texts = zip(*batch)
                     answers = translate_batch(model, sids, texts)
